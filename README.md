@@ -14,9 +14,13 @@ let's see an example of input file to understand it better:
 
 
 W
+
 1
+
 P1:0,4,3,2
+
 P2:1,5,2,3
+
 P3:3,2,4,1
 
 and for output programm will create a file with calculating terminologies and gant chart
