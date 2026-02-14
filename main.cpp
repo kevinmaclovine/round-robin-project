@@ -126,11 +126,11 @@ void output_function (vector <process> processes, int dl , algorithm_factors con
           current_time += in_cpu.bursts.front();
           in_cpu.bursts.erase(in_cpu.bursts.begin());
           if (in_cpu.bursts.empty()){
-            file<<" | "<<in_cpu.pid<<" | "<<current_time;
+            file<<" | "<<in_cpu.pid<<" | "<<current_time <<"ms";
             in_cpu.pstates = TERMINATE;
             completed_process++;
           }else{
-            file<<" | "<<in_cpu.pid<<" | "<<current_time;
+            file<<" | "<<in_cpu.pid<<" | "<<current_time<<"ms";
             //file<<current_time;
             in_cpu.pstates = WAITING;
             in_cpu.cpu_time = in_cpu.bursts.front() + current_time;
@@ -146,7 +146,7 @@ void output_function (vector <process> processes, int dl , algorithm_factors con
         }else{
           current_time+=container.quantom;
           in_cpu.bursts[0]  -= container.quantom;
-          file <<" | "<<in_cpu.pid<<" | "<<current_time;
+          file <<" | "<<in_cpu.pid<<" | "<<current_time << "ms";
           in_cpu.pstates = READY;
           if ( process_queue.empty() || in_cpu.cpu_time < process_queue.front().cpu_time)
             process_queue.push_back(in_cpu);
